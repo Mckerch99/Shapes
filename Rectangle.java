@@ -1,48 +1,81 @@
 package Shapes;
 
-
-
-
-
 public class Rectangle extends GeometricObject {
-	private double width;
-	private double height;
 
-	public Rectangle() {
-	}
+    private double width;
+    private double height;
 
-	public Rectangle(double width, double height) {
-		this.width = width;
-		this.height = height;
-	}
+    public Rectangle() {
+    }
 
-	/** Return width */
-	public double getWidth() {
-		return width;
-	}
+    public Rectangle(double width, double height) {
 
-	/** Set a new width */
-	public void setWidth(double width) {
-		this.width = width;
-	}
+        try {
+            if (width != height) {
+                this.width = width;
+                this.height = height;
+            } else {
+                throw new ArithmeticException("The width and height can not be the same length");
+            }
+        } catch (ArithmeticException e) {
+            throw e;
+        }
+    }
 
-	/** Return height */
-	public double getHeight() {
-		return height;
-	}
+    /**
+     * Return width
+     */
+    public double getWidth() {
+        return width;
+    }
 
-	/** Set a new height */
-	public void setHeight(double height) {
-		this.height = height;
-	}
+    /**
+     * Set a new width
+     */
+    public void setWidth(double width) {
+        try {
+            if (width != getHeight()) {
+                this.width = width;
+            } else {
+                throw new ArithmeticException("The Width equals the Height; width and height can not be equal");
+            }
+        } catch (ArithmeticException e) {
+            throw e;
+        }
+    }
 
-	 /** Return area */
-	public double getArea() {
-		return width * height;
-	}
+    /**
+     * Return height
+     */
+    public double getHeight() {
+        return height;
+    }
 
-	 /** Return perimeter */
-	public double getPerimeter() {
-		return 2 * (width + height);
-	}
+    /**
+     * Set a new height
+     */
+    public void setHeight(double height) {
+        try {
+            if (height != getWidth()) {
+                this.height = height;
+            } else {
+                throw new ArithmeticException("The Height equals the Width; height and width can not be equal");
+            }
+        } catch (ArithmeticException e) {
+            throw e;
+        }
+    }
+        /**
+         * Return area
+         */
+    public double getArea() {
+        return width * height;
+    }
+
+    /**
+     * Return perimeter
+     */
+    public double getPerimeter() {
+        return 2 * (width + height);
+    }
 }
