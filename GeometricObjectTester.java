@@ -17,6 +17,7 @@ public class GeometricObjectTester {
     public static void main(String[] args) {
         Triangle tri = new Triangle();
 		Rectangle rec = new Rectangle();
+		Circle cir = new Circle();
 		
         
         
