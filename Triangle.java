@@ -11,9 +11,21 @@ import static java.lang.Math.sqrt;
 //creating a Triangle class that extends the super class GeometricObject
 public class Triangle extends GeometricObject {
 
-    double side1 = 3.0;
-    double side2 = 4.0;
-    double side3 = 5.0;
+    try {
+            //if all the sides follow the rules of making a triangle then the triangle object will be created.
+            if ((side1 + side2) > side3 && (side1 + side3) > side2 && (side2 + side3) > side1) {
+                this.side1 = side1;
+                this.side2 = side2;
+                this.side3 = side3;
+                //otherwise if the sides dont follow the rules a new ArithmeticException will be thrown with the message "Invalid Sides; cannot create the triangle object!"
+            } else {
+                throw new ArithmeticException("Invalid Sides; cannot create the triangle object!");
+            }
+            //This with catch the newly thrown ArithmeticException and then throw the Exception back out again
+        } catch (ArithmeticException e) {
+            throw e;
+
+        }
 
     public Triangle() {
 
