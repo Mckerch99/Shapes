@@ -17,7 +17,6 @@ public abstract class GeometricObject /*extends Object -- this done by deafult i
      * Construct a default geometric object
      */
     public GeometricObject() {
-        System.out.println("Super consrtuctor is called first");
         dateCreated = new java.util.Date();
     }
 
