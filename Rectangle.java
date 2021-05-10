@@ -2,8 +2,8 @@ package Shapes;
 
 public class Rectangle extends GeometricObject {
 
-    private double width;
-    private double height;
+    private double width = 10;
+    private double height = 5;
 
     public Rectangle() {
     }
